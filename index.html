@@ -19,6 +19,14 @@ layout: default
   </header>
 
   <!-- Main -->
+  <div class="intro-image">
+    <img
+      src="/bgv/johannes-plenio-RwHv7LgeC7s-unsplash.jpg"
+      alt="Intro Image"
+    />
+    <h2>Welcome to the Gallery</h2>
+  </div>
+
   <div id="main" data-exif="{{ site.exif }}">
     {% for image in site.static_files %} {% if image.path contains 'fulls' %}
     <article class="thumb">
