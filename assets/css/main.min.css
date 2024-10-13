@@ -1934,46 +1934,6 @@ body.loading #main .thumb {
   will-change: opacity, transform; /* Use hardware acceleration */
 }
 
-/*Add an overlay text effect on hover 
-#main .thumb::before {
-  content: attr(
-    data-title
-  ); /*Using the data-title attribute for image titles 
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  opacity: 0;
-  transform: translateY(10px); /*20px
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; /* Faster text transition
-  z-index: 2; /* Ensure text appears above the image 
-}*/
-
-/********************************demo*******
-#main .thumb::before {
-  content: attr(data-description);
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  opacity: 0;
-  transform: translateY(10px); /*20px
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; /* Faster text transition*
-z-index: 2; /* Ensure text appears above the image *
-}
-**********************demo*******************************/
-
-/* #main .thumb:hover::before {
-  opacity: 1;
-  transform: translateY(0); /* Slide in the text on hover 
-} */
-
 /* Glow effect on hover */
 #main .thumb:hover {
   box-shadow: 0 0 15px rgba(255, 255, 0, 0.6); /* Slightly reduced glow for smoother performance */
@@ -2040,4 +2000,49 @@ body {
 .thumb > .image {
   position: relative;
   z-index: 1; /* Make sure image is behind the text */
+}
+
+/* For mobile screens up to 768px */
+@media (max-width: 768px) {
+  .thumb .data-title {
+    font-size: 1.2em; /* Adjust font size for smaller screens */
+    margin-bottom: 5px;
+  }
+
+  .thumb .data-description {
+    font-size: 1em; /* Adjust font size for smaller screens */
+    margin-top: 3px;
+  }
+
+  .thumb .overlay-content {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  /* Adjust hover effect to be more mobile-friendly */
+  .thumb:hover .overlay-content {
+    opacity: 1;
+  }
+
+  /* Ensure images scale properly on mobile */
+  .thumb {
+    width: 100%; /* Make thumbnails full-width on mobile */
+    height: auto;
+    min-height: 15em; /* Adjust minimum height for mobile screens */
+  }
+}
+
+/* For mobile screens up to 480px (smaller phones) */
+@media (max-width: 480px) {
+  .thumb .data-title {
+    font-size: 1em; /* Smaller font for very small screens */
+  }
+
+  .thumb .data-description {
+    font-size: 0.9em; /* Smaller font for description */
+  }
+
+  /* Further reduce padding on smaller screens */
+  .thumb .overlay-content {
+    padding: 8px;
+  }
 }

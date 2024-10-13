@@ -1,19 +1,34 @@
 # Base configs
-baseurl: "https://sachinshrma1.github.io/PortfolioPhotos/"
+baseurl: ""
 #baseurl: "" # Comment the above line and uncomment this to test the website locally
 image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 google_analytics: "UA-46465113-2"
 image_metadata:
   - name: "File1.jpg"
-    title: "beautiful"
-    description: >
-      HELLO
-      A stunning view of the mountains during sunset.
-
+    title: "Blazing Skies"
+    description: "A haunting sunset bathes the barren trees in an ethereal glow, capturing the stark contrast between light and shadow."
   - name: "File10.jpg"
-    title: "City Life"
-    description: "The busy streets of downtown at night."
+    title: "Still Waters, Vibrant Skies"
+    description: "A calm river reflects the vibrant hues of the sky, stretching into the distance with mountains as a backdrop"
+  - name: "File100.jpg"
+    title: "Autumn’s Edge"
+    description: "The branches of a tree laden with orange and red leaves frame a view of a forest alive with the colors of fall."
+  - name: "File101.jpg"
+    title: "Lone Pine in the Sky"
+    description: "A tall pine tree stands alone against the vast sky, with fluffy clouds painting the heavens in delicate strokes."
+  - name: "File102.jpg"
+    title: "Through the Canopy"
+    description: "Looking up from beneath the forest, a sky punctuated by lush greenery and a scattering of clouds creates a tranquil moment."
+  - name: "File103.jpg"
+    title: "Nature’s Canvas"
+    description: "Tall trees reaching up towards the sky, framed by soft white clouds on a crisp blue backdrop, showcasing the beauty of a clear day."
+  - name: "File104.jpg"
+    title: "Misty Hillside"
+    description: "Green hills rise into the fog, as mist weaves through the trees, creating a serene, almost dreamlike landscape."
+  - name: "File105.jpg"
+    title: "Autumn's Whisper"
+    description: "A forest path illuminated by soft sunlight, with hints of fall’s approach visible in the golden leaves and rich foliage."
   # Add more images as needed
 
 # UI configs
