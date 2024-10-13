@@ -1893,7 +1893,7 @@ body.loading #main .thumb {
 
   .intro-image::before {
     width: 200px; /* Smaller square on mobile */
-    height: 200px;
+    height: 250px;
     left: 5%;
     top: 35%;
   }
