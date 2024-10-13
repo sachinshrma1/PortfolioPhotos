@@ -1849,7 +1849,7 @@ body.loading #main .thumb {
 /* Styles for introductory image before the gallery */
 .intro-image {
   position: relative;
-  background-image: url("/bgv/File137.jpg"); /* Replace with the correct path to your image */
+  background-image: url("../bgv/File137.jpg"); /* Replace with the correct path to your image */
   background-size: cover;
   background-position: center;
   height: 100vh; /* Full screen height */
