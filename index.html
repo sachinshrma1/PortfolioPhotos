@@ -19,28 +19,34 @@ layout: default
   </header>
 
   <!-- Main -->
+  <!-- <div class="intro-image">
+    <img src="/bgv/f1283367952.jpg" alt="Intro Image" />
+    <h2>Step into the world of nature through my gallery</h2>
+  </div> -->
   <div class="intro-image">
-    <img
-      src="/bgv/johannes-plenio-RwHv7LgeC7s-unsplash.jpg"
-      alt="Intro Image"
-    />
-    <h2>Welcome to the Gallery</h2>
+    <h2>Step into the world of nature through my gallery</h2>
   </div>
 
+  <!-- Main -->
   <div id="main" data-exif="{{ site.exif }}">
-    {% for image in site.static_files %} {% if image.path contains 'fulls' %}
-    <article class="thumb">
+    {% for image in site.static_files %} {% if image.path contains 'fulls' %} {%
+    assign image_meta = site.image_metadata | where: "name", image.name | first
+    %}
+    <article
+      class="thumb"
+      data-title="{{ image_meta.title }}"
+      data-description="{{ image_meta.description }}"
+    >
       <a
         href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}"
         class="image"
       >
         <img
           src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}"
-          alt=""
+          alt="{{ image_meta.title }}"
           data-name="{{ image.name }}"
-      /></a>
-      <!--<h2></h2>
-            <p></p>-->
+        />
+      </a>
     </article>
     {% endif %} {% endfor %}
   </div>
