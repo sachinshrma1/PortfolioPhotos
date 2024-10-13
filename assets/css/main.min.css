@@ -1978,3 +1978,12 @@ body.loading #main .thumb {
     }
   }
 }
+@media screen and (max-width: 736px) {
+  .thumb {
+    width: 100%; /* Make the thumbnails take full width on smaller screens */
+    height: auto; /* Adjust the height accordingly */
+  }
+  .poptrox-popup {
+    width: 90%; /* Adjust the popup width for mobile screens */
+  }
+}
