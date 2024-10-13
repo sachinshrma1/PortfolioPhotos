@@ -1,9 +1,20 @@
 # Base configs
-baseurl: "https://sachinshrma1.github.io/PortfolioPhotos/"
+baseurl: ""
 #baseurl: "" # Comment the above line and uncomment this to test the website locally
 image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 google_analytics: "UA-46465113-2"
+image_metadata:
+  - name: "File1.jpg"
+    title: "beautiful"
+    description: >
+      HELLO
+      A stunning view of the mountains during sunset.
+
+  - name: "File10.jpg"
+    title: "City Life"
+    description: "The busy streets of downtown at night."
+  # Add more images as needed
 
 # UI configs
 title: "Photography by Sheetal Bharmaik"
@@ -21,12 +32,3 @@ footer:
 exif: '[{"tag": "Model", "icon": "camera-retro"}, {"tag": "FNumber", "icon": "dot-circle-o"}, {"tag": "ExposureTime", "icon": "clock-o"}, {"tag": "ISOSpeedRatings", "icon": "info-circle"}]'
 social_urls:
   instagram: "https://www.instagram.com/_ancientbird/"
-
-image_metadata:
-  - name: "File1.jpg"
-    title: "Beautiful Landscape"
-    description: "A stunning view of the mountains during sunset."
-  - name: "File10.jpg"
-    title: "City Life"
-    description: "The busy streets of downtown at night."
-  # Add more images as needed

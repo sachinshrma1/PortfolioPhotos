@@ -20,7 +20,7 @@ layout: default
 
   <!-- Main -->
   <div class="intro-image">
-    <h2>Step into the world of nature through my gallery</h2>
+    <h2>Step into the world of nature through my camera's lens</h2>
   </div>
 
   <!-- Main -->
@@ -28,11 +28,7 @@ layout: default
     {% for image in site.static_files %} {% if image.path contains 'fulls' %} {%
     assign image_meta = site.image_metadata | where: "name", image.name | first
     %}
-    <article
-      class="thumb"
-      data-title="{{ image_meta.title }}"
-      data-description="{{ image_meta.description }}"
-    >
+    <article class="thumb">
       <a
         href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}"
         class="image"
@@ -40,10 +36,17 @@ layout: default
         <img
           src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}"
           alt="{{ image_meta.title }}"
-          data-name="{{ image.name }}"
+          loading="lazy"
         />
+        <!-- Use divs for title and description -->
+        <div class="overlay-content">
+          <span class="data-title">{{ image_meta.title }}</span>
+          <div></div>
+          <span class="data-description">{{ image_meta.description }}</span>
+        </div>
       </a>
     </article>
+
     {% endif %} {% endfor %}
   </div>
 
@@ -142,8 +145,4 @@ layout: default
       </div>
     </div>
   </footer>
-  <!-- Swipe Gesture Script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
-  <script src="main.js"></script>
-  <!-- If not already included -->
 </div>

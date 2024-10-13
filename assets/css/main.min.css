@@ -1934,11 +1934,11 @@ body.loading #main .thumb {
   will-change: opacity, transform; /* Use hardware acceleration */
 }
 
-/*Add an overlay text effect on hover */
+/*Add an overlay text effect on hover 
 #main .thumb::before {
   content: attr(
     data-title
-  ); /*Using the data-title attribute for image titles */
+  ); /*Using the data-title attribute for image titles 
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -1947,43 +1947,97 @@ body.loading #main .thumb {
   font-weight: bold;
   letter-spacing: 0.05em;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; /* Faster text transition*/
-}
+  transform: translateY(10px); /*20px
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; /* Faster text transition
+  z-index: 2; /* Ensure text appears above the image 
+}*/
 
-#main .thumb:hover::before {
-  opacity: 1;
-  transform: translateY(
-    0
-  ); /* Slide in the text on hover 
+/********************************demo*******
+#main .thumb::before {
+  content: attr(data-description);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(10px); /*20px
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; /* Faster text transition*
+z-index: 2; /* Ensure text appears above the image *
 }
+**********************demo*******************************/
+
+/* #main .thumb:hover::before {
+  opacity: 1;
+  transform: translateY(0); /* Slide in the text on hover 
+} */
 
 /* Glow effect on hover */
-  #main .thumb:hover {
-    box-shadow: 0 0 15px rgba(255, 255, 0, 0.6); /* Slightly reduced glow for smoother performance */
-  }
+#main .thumb:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.6); /* Slightly reduced glow for smoother performance */
+}
 
-  /* Subtle background animation */
-  body {
-    background: linear-gradient(135deg, #242629 25%, #1f2123 75%);
-    animation: backgroundMove 5s ease infinite;
-  }
+/* Subtle background animation */
+body {
+  background: linear-gradient(135deg, #242629 25%, #1f2123 75%);
+  animation: backgroundMove 5s ease infinite;
+}
 
-  @keyframes backgroundMove {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
+@keyframes backgroundMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
   }
 }
-@media screen and (max-width: 736px) {
-  .thumb {
-    width: 100%; /* Make the thumbnails take full width on smaller screens */
-    height: auto; /* Adjust the height accordingly */
-  }
-  .poptrox-popup {
-    width: 90%; /* Adjust the popup width for mobile screens */
-  }
+
+/* ********************************************************************** */
+
+/* Container for title and description */
+.thumb .overlay-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Darker background for better contrast */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: white;
+  text-align: left;
+  z-index: 2; /* Ensure text is above everything else */
+}
+
+/* Title styling */
+.thumb .data-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  z-index: 2; /* Ensure title is on top */
+}
+
+/* Description styling */
+.thumb .data-description {
+  font-size: 1.2em;
+  margin-top: 5px;
+  z-index: 2; /* Ensure description is on top */
+}
+
+/* Show overlay on hover */
+.thumb:hover .overlay-content {
+  opacity: 1; /* Makes the title and description visible */
+}
+
+/* Ensure the image doesn't hide the text */
+.thumb > .image {
+  position: relative;
+  z-index: 1; /* Make sure image is behind the text */
 }

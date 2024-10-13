@@ -282,30 +282,3 @@
     }
   });
 })(jQuery);
-
-$(document).ready(function () {
-  // Initialize poptrox (if not already)
-  $("#main").poptrox({
-    usePopupNav: true, // Enable navigation in popups
-    popupSpeed: 300,
-    popupLoaderText: "Loading...",
-    usePopupCaption: true,
-    overlayColor: "#000",
-    overlayOpacity: 0.6,
-  });
-
-  // Enable swipe functionality for image gallery
-  $(".thumb").swipe({
-    //Swipe left to show next image
-    swipeLeft: function (event, direction, distance, duration, fingerCount) {
-      $(".poptrox-popup .nav-next").trigger("click");
-    },
-    //Swipe right to show previous image
-    swipeRight: function (event, direction, distance, duration, fingerCount) {
-      $(".poptrox-popup .nav-previous").trigger("click");
-    },
-    // Default configurations
-    threshold: 75, // Minimal distance to be swiped
-    allowPageScroll: "vertical", // Allow vertical scrolling with swipe
-  });
-});
